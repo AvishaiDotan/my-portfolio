@@ -788,3 +788,24 @@ fieldset[disabled] .btn-xl:hover {
     opacity: .5;
     
 }
+
+.pointer:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 1px black;
+}
+
+.offcanvas-aside{
+    transition: all 0.5s ease-in;
+}
+
+.fa-comment-close::before {
+    content: "\1F5D9";
+}
+
+.open-btn-contact {
+    position:absolute;
+
+    margin-block-start: 20px;
+    left: 50%;
+    transform: translate(-50%);
+}
