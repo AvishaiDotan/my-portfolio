@@ -1,9 +1,18 @@
 'use strict'
 
-// Can it works without document
 $(onInit)
 
 function onInit() {
+    renderProjs()
+    $('.open-contact-modal-action').click(onChangeContactModalIcon)
+    $('.contact-nav-link-action').click(onChangeContactModalIcon)
+    $('.send-mail-action').click(onSendMail)
+    $('.portfolio-link').click(onOpenProjModal)
+    $('.close-modal').click(onCloseProjModal)
+    $('.close-modal-btn').click(onCloseProjModal)
+}
+
+function renderProjs() {
     const projs = getProjs()
 
     var strHtmls = projs.map((proj, idx) => `
@@ -25,13 +34,10 @@ function onInit() {
 
     var $elContainer = $('.portfolio-link-container')
     $elContainer.html(strHtmls)
-
-    $('.portfolio-link').click(onOpenModal)
-    $('.close-modal').click(onCloseModal)
 }
 
-function onOpenModal() {
-
+function onOpenProjModal() {
+    
     const projId = $(this).data().id
     const projIdx = $(this).data().idx
 
@@ -48,28 +54,23 @@ function onOpenModal() {
     $('.proj-date').text(proj.uploadDate)
     $('.proj-category').text(proj.category)
 
-    $('.portfolio-modal').show()
+    $('.modals-container').show()
+
 }
 
-function onCloseModal() {
-    $(this).hide()
+function onCloseProjModal() {
+    $('.modals-container').hide()
 }
 
-$('.toggle-btn-special').click(onToggleContactModal)
-$('.open-btn-contact').click(onSendMail)
+function onChangeContactModalIcon() {
+    const isClose = $('.open-contact-modal-icon').hasClass('fa-comment')
 
-function onToggleContactModal() {
-    
-    const state = $(this).data('state')
-
-    if (state === 'off') {
-        $(this).data('state', 'on')
-        $('.btn-special-icon').removeClass('fa-comment')
-        $('.btn-special-icon').addClass('fa-comment-close')
+    if (isClose) {
+        $('.open-contact-modal-icon').removeClass('fa-comment')
+        $('.open-contact-modal-icon').addClass('fa-comment-close')
     } else {
-        $(this).data('state', 'off')
-        $('.btn-special-icon').removeClass('fa-comment-close')
-        $('.btn-special-icon').addClass('fa-comment')
+        $('.open-contact-modal-icon').removeClass('fa-comment-close')
+        $('.open-contact-modal-icon').addClass('fa-comment')
     }
 }
 

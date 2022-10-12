@@ -26,8 +26,8 @@
 </head>
 
 <body id="page-top">
-  <div class="offcanvas-btn toggle-btn-special" data-state="off" onClick="openCanvas()">
-    <i class="fa fa-comment btn-special-icon"  aria-hidden="true"></i>
+  <div class="offcanvas-btn open-contact-modal-action" data-state="off" onclick="openCanvas()">
+    <i class="fa fa-comment open-contact-modal-icon"  aria-hidden="true"></i>
   </div>
   <aside class="offcanvas-aside bg-secondary">
 
@@ -49,7 +49,7 @@
       <label for="exampleFormControlFile1">Add File</label>
       <input type="file" class="form-control-file form-file" id="exampleFormControlFile1">
     </div>
-    <button type="button" class="btn btn-light pointer open-btn-contact">Send</button>
+    <button type="button" class="btn btn-light pointer send-mail-action">Send</button>
   </form>
     
   </aside>
@@ -74,7 +74,7 @@
             <a class="nav-link js-scroll-trigger" href="#me">Me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger contact-nav-link-action"  onclick="openCanvas()" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -284,7 +284,7 @@
                       <li>Date: <span class="proj-date">${proj.uploadDate}</span></li>
                       <li><span class="proj-category">${proj.uploadDate}</span></li>
                       </ul>
-                      <button class="btn btn-primary" data-dismiss="modal" type="button">
+                      <button class="btn btn-primary close-modal-btn" data-dismiss="modal" type="button">
                           <i class="fa fa-times"></i>
                           Close Project</button>
                   </div
