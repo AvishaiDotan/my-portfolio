@@ -65,7 +65,7 @@ body {
 .offcanvas-btn {
     z-index: 100000;
     position: fixed;
-    bottom: 8%;
+    bottom: 5%;
     right: 3%;
     height: 50px;
     width: 50px;
@@ -188,6 +188,7 @@ body {
    
 }
 header.masthead {
+    height: 85vh;
     text-align: center;
     color: white;
     background-image: url("../img/header-bg.jpg");
@@ -604,7 +605,8 @@ footer ul.quicklinks {
     text-transform: uppercase;
 }
 ul.social-buttons {
-    margin-bottom: 0;
+    margin-bottom: 50px;
+    
 }
 ul.social-buttons li a {
     font-size: 20px;
@@ -766,4 +768,14 @@ fieldset[disabled] .btn-xl:hover {
 .container {
     padding-right: 0;
     padding-left: 0;
+}
+
+.schools-icons {
+    max-height: 100px;
+    max-width: 126px;
+}
+
+#me {
+    padding-block-end: 100px;
+    min-height: 600px;
 }
