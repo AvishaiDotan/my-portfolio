@@ -779,3 +779,12 @@ fieldset[disabled] .btn-xl:hover {
     padding-block-end: 100px;
     min-height: 600px;
 }
+
+.image-link-hover {
+    transition: .3s ease-in-out;
+    opacity: 1;
+}
+.image-link-hover:hover {
+    opacity: .5;
+    
+}
