@@ -86,7 +86,7 @@ function onSendMail() {
         return
     }
 
-    const windowAddress = `https://mail.google.com/mail/u/0/?fs=1&to=avishaidotan@gmail.com&su=${subject}&body=${message + '\n\tFrom: ' + emailAddress}&tf=cm`
+    const windowAddress = `https://mail.google.com/mail/u/0/?fs=1&to=avishaidotan@gmail.com&su=${subject}&body=${message + '%0A%0A' + emailAddress}&tf=cm`
     window.open(windowAddress)
     resetForm()
 }
