@@ -80,6 +80,12 @@ function onSendMail() {
     const message = $('.form-message').val()
     const file = $('.form-file').val()
 
+    if (!emailAddress || !subject || !message) {
+        $('.send-mail-action').addClass('shake')
+        setTimeout(() => {$('.send-mail-action').removeClass('shake')}, 500)
+        return
+    }
+
     const windowAddress = `https://mail.google.com/mail/u/0/?fs=1&to=avishaidotan@gmail.com&su=${subject}&body=${message + '\n\tFrom: ' + emailAddress}&tf=cm`
     window.open(windowAddress)
     resetForm()
